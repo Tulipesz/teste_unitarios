@@ -25,14 +25,15 @@ describe('Show Profile', () => {
 
     await createUserUseCase.execute(user);
 
-    const result = await authenticateUserUseCase.execute({
+    const { user: { id } } = await authenticateUserUseCase.execute({
       email: user.email,
       password: user.password,
     });
 
-    // const result = await showUserProfileUseCase.execute(token);
+    const result = await showUserProfileUseCase.execute(id!);
 
-    console.log(result);
-    // expect(result).toHaveProperty("")
+    expect(result).toHaveProperty('id');
+    expect(result).toHaveProperty('email');
+    expect(result).toHaveProperty('name');
   });
 });
