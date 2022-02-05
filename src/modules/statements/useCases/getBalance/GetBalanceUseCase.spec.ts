@@ -13,7 +13,10 @@ describe('Get Balance', () => {
   beforeEach(() => {
     inMemoryStatementsRepository = new InMemoryStatementsRepository();
     inMemoryUsersRepository = new InMemoryUsersRepository();
-    getBalanceUseCase = new GetBalanceUseCase(inMemoryStatementsRepository, inMemoryUsersRepository);
+    getBalanceUseCase = new GetBalanceUseCase(
+      inMemoryStatementsRepository,
+      inMemoryUsersRepository,
+    );
     createUserUseCase = new CreateUserUseCase(inMemoryUsersRepository);
   });
 

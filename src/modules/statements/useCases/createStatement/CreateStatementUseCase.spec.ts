@@ -45,7 +45,11 @@ describe('Create Statement', () => {
       statement,
     );
 
-    expect(result).toHaveProperty('Statement');
+    expect(result).toHaveProperty('amount');
+    expect(result).toHaveProperty('description');
+    expect(result).toHaveProperty('id');
+    expect(result).toHaveProperty('type');
+    expect(result).toHaveProperty('user_id');
   });
 
   it('should be able to make a withdraw', async () => {
@@ -75,6 +79,10 @@ describe('Create Statement', () => {
 
     const result = await createStatementUseCase.execute(statement);
 
-    expect(result).toHaveProperty('Statement');
+    expect(result).toHaveProperty('amount');
+    expect(result).toHaveProperty('description');
+    expect(result).toHaveProperty('id');
+    expect(result).toHaveProperty('type');
+    expect(result).toHaveProperty('user_id');
   });
 });
